@@ -38,13 +38,13 @@ class Decoder:
                     continue
                 l_i *= np.poly1d([1, -self.shares[j][0]])
                 l_i /= self.shares[i][0] - self.shares[j][0]
-                print(l_i)
-            print('new')
+                # print(l_i)
+            # print('new')
             l_i *= self.shares[i][1]
-            print('y', self.shares[i][1])
-            print(l_i)
+            # print('y', self.shares[i][1])
+            # print(l_i)
             #l_i = np.poly1d([self._mod(coeff, self.p) for coeff in list(l_i)])
-            print(l_i)
-            print('end')
+            # print(l_i)
+            # print('end')
             self.basis_polynomials.append(l_i)
         return sum([list(l)[-1] for l in self.basis_polynomials]) % self.p
